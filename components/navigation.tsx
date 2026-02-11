@@ -1,10 +1,10 @@
 import Link from "next/link";
 
 const navLinks = [
-  { label: "About Me", href: "#about" },
+  { label: "About", href: "#about" },
+  { label: "Experience", href: "#experience" },
   { label: "Portfolio", href: "#portfolio" },
-  { label: "Services", href: "#services" },
-  { label: "Skills", href: "#skills" },
+  { label: "Contact", href: "#contact" },
 ];
 
 export default function Navigation() {
@@ -51,7 +51,7 @@ export default function Navigation() {
         href="#contact"
         className="hidden items-center gap-1 text-sm text-primary underline underline-offset-4 md:flex"
       >
-        Book A Call
+        Get In Touch
         <span className="text-xs">&#8599;</span>
       </Link>
     </nav>
