@@ -1,31 +1,37 @@
-import Link from "next/link";
+"use client";
 
-const navLinks = [
-  { label: "About", href: "#about" },
-  { label: "Portfolio", href: "#portfolio" },
-  { label: "Experience", href: "#experience" },
-  { label: "Contact", href: "#contact" },
-];
+import Link from "next/link";
+import { useTranslations } from "next-intl";
+
+const navKeys = [
+  { key: "about", href: "#about" },
+  { key: "portfolio", href: "#portfolio" },
+  { key: "experience", href: "#experience" },
+  { key: "contact", href: "#contact" },
+] as const;
 
 export default function Footer() {
+  const nav = useTranslations("Navigation");
+  const t = useTranslations("Footer");
+
   return (
     <footer className="border-t border-secondary/10 px-8 py-12 lg:px-12">
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-8 md:flex-row md:justify-between">
         {/* Left — name */}
         <p className="text-sm text-secondary">
-          &copy; {new Date().getFullYear()} Antsa Ratolojanahary
+          {t("copyright", { year: new Date().getFullYear() })}
         </p>
 
         {/* Center — nav */}
         <nav>
           <ul className="flex items-center gap-6">
-            {navLinks.map((link) => (
+            {navKeys.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}
                   className="text-sm text-secondary transition-colors hover:text-primary"
                 >
-                  {link.label}
+                  {nav(link.key)}
                 </Link>
               </li>
             ))}
@@ -37,7 +43,7 @@ export default function Footer() {
           href="#"
           className="text-sm text-secondary transition-colors hover:text-primary"
         >
-          Back to top &uarr;
+          {t("backToTop")}
         </Link>
       </div>
     </footer>

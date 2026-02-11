@@ -1,19 +1,27 @@
-import type { Metadata } from "next";
+import { NextIntlClientProvider } from "next-intl";
+import { getLocale, getTranslations } from "next-intl/server";
 import "./globals.css";
 
-export const metadata: Metadata = {
-  title: "Antsa Ratolojanahary — Video Editor & Photographer",
-  description: "Portfolio of Antsa Ratolojanahary, video editor & photographer",
-};
+export async function generateMetadata() {
+  const t = await getTranslations("Metadata");
+  return {
+    title: t("title"),
+    description: t("description"),
+  };
+}
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const locale = await getLocale();
+
   return (
-    <html lang="en">
-      <body className="antialiased">{children}</body>
+    <html lang={locale}>
+      <body className="antialiased">
+        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+      </body>
     </html>
   );
 }

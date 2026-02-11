@@ -1,0 +1,123 @@
+{
+  "Metadata": {
+    "title": "Antsa Ratolojanahary — Monteur Vidéo & Photographe",
+    "description": "Portfolio d'Antsa Ratolojanahary, monteur vidéo & photographe"
+  },
+  "Navigation": {
+    "about": "À propos",
+    "experience": "Expérience",
+    "portfolio": "Portfolio",
+    "contact": "Contact",
+    "cta": "Me contacter"
+  },
+  "Hero": {
+    "sidebar": "Monteur vidéo & photographe",
+    "videosEdited": "Vidéos montées",
+    "fasterDelivery": "% plus rapide",
+    "heading": "Bonjour",
+    "subtitle": "— C'est Antsa, monteur vidéo & photographe",
+    "scrollDown": "Défiler vers le bas ↓",
+    "profileAlt": "Portrait d'Antsa Ratolojanahary"
+  },
+  "About": {
+    "label": "À PROPOS",
+    "headingLine1": "Raconter des histoires",
+    "headingLine2": "à travers chaque image",
+    "bio": "Monteur vidéo et photographe créatif, je combine des compétences techniques en post-production avec un œil affûté pour la composition visuelle. Passionné par le storytelling — que ce soit en mouvement ou en une seule image — j'aide les créateurs et les entreprises à transformer leurs idées en contenu impactant tout en optimisant leur flux de travail quotidien.",
+    "skillsLabel": "COMPÉTENCES",
+    "skills": {
+      "postProduction": "Post-production Vidéo",
+      "storytelling": "Storytelling Visuel",
+      "premiere": "Adobe Premiere Pro",
+      "colorGrading": "Étalonnage",
+      "soundDesign": "Design Sonore",
+      "motionDesign": "Motion Design",
+      "photography": "Photographie",
+      "retouching": "Retouche Photo"
+    }
+  },
+  "Experience": {
+    "label": "EXPÉRIENCE",
+    "headingLine1": "Où j'ai",
+    "headingLine2": "travaillé",
+    "educationLabel": "FORMATION",
+    "jobs": {
+      "aglt": {
+        "role": "Monteur Vidéo",
+        "company": "AGLT",
+        "period": "Oct 2024 — Présent",
+        "highlights": [
+          "Montage de 55+ vidéos pour des chaînes YouTube totalisant 813 abonnés",
+          "Réduction du temps de post-production de 20% grâce à des templates personnalisés",
+          "Montage vidéo immobilier pour des clients en Belgique & au Canada",
+          "Contenu court pour les réseaux sociaux avec montage dynamique",
+          "Étalonnage pour rendre les intérieurs plus chaleureux et attrayants"
+        ]
+      },
+      "drcc": {
+        "role": "Journaliste stagiaire & Monteur Vidéo",
+        "company": "DRCC Vakinankaratra, Antsirabe",
+        "period": "2022 — 2024",
+        "highlights": [
+          "Montage complet de journaux vidéo — assemblage, titrage, mixage audio",
+          "Journalisme de terrain, interviews & couverture d'événements culturels"
+        ]
+      }
+    },
+    "education": {
+      "bachelor": {
+        "degree": "Licence en Communication",
+        "major": "Médias & Journalisme",
+        "school": "Université Adventiste Zurcher Sambaina",
+        "period": "2022 — 2024"
+      },
+      "baccalaureate": {
+        "degree": "Baccalauréat",
+        "major": "Série A2",
+        "school": "Lycée Catholique Sainte-Thérèse d'Antanifotsy",
+        "period": "2021"
+      }
+    }
+  },
+  "Gallery": {
+    "label": "PORTFOLIO",
+    "headingLine1": "Galerie",
+    "headingLine2": "photographique",
+    "items": {
+      "image1": { "title": "Heure Dorée", "subtitle": "Paysage" },
+      "image2": { "title": "Profondeur de Champ", "subtitle": "Macro" },
+      "image3": { "title": "Contraste", "subtitle": "Noir & Blanc" },
+      "image4": { "title": "Reflets", "subtitle": "Architecture" },
+      "image5": { "title": "Émotion Brute", "subtitle": "Documentaire" },
+      "image6": { "title": "Textures", "subtitle": "Détail" },
+      "image7": { "title": "Point de Fuite", "subtitle": "Perspective" },
+      "image8": { "title": "Nature Morte", "subtitle": "Objets" }
+    }
+  },
+  "Contact": {
+    "label": "CONTACT",
+    "headingLine1": "Travaillons",
+    "headingLine2": "ensemble",
+    "description": "Vous avez un projet en tête ou souhaitez collaborer ? Envoyez-moi un message et je vous répondrai dès que possible.",
+    "nameLabel": "Nom",
+    "namePlaceholder": "Votre nom",
+    "nameRequired": "Le nom est requis.",
+    "emailLabel": "Email",
+    "emailPlaceholder": "votre@email.com",
+    "emailRequired": "L'email est requis.",
+    "emailInvalid": "Adresse email invalide.",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Parlez-moi de votre projet...",
+    "messageRequired": "Le message est requis.",
+    "send": "Envoyer",
+    "sending": "Envoi en cours...",
+    "successTitle": "Message envoyé !",
+    "successMessage": "Merci de m'avoir contacté. Je vous répondrai bientôt.",
+    "sendAnother": "Envoyer un autre message",
+    "error": "Une erreur est survenue."
+  },
+  "Footer": {
+    "copyright": "© {year} Antsa Ratolojanahary",
+    "backToTop": "Retour en haut ↑"
+  }
+}

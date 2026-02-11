@@ -1,56 +1,37 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { useTranslations } from "next-intl";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const experience = [
-  {
-    role: "Video Editor",
-    company: "AGLT",
-    period: "Oct 2024 — Present",
-    highlights: [
-      "Edited 55+ videos for YouTube channels totaling 813 subscribers",
-      "Reduced post-production time by 20% with custom templates",
-      "Real estate video editing for clients in Belgium & Canada",
-      "Short-form social media content with dynamic editing",
-      "Color grading to make interiors warmer and more appealing",
-    ],
-  },
-  {
-    role: "Intern Journalist & Video Editor",
-    company: "DRCC Vakinankaratra, Antsirabe",
-    period: "2022 — 2024",
-    highlights: [
-      "Full video journal editing — assembly, titling, audio mixing",
-      "Field journalism, interviews & cultural event coverage",
-    ],
-  },
-];
-
-const education = [
-  {
-    degree: "Bachelor in Communication",
-    major: "Media & Journalism",
-    school: "Adventist University Zurcher Sambaina",
-    period: "2022 — 2024",
-  },
-  {
-    degree: "Baccalaureate",
-    major: "Series A2",
-    school: "Lycee Catholique Sainte-Therese d'Antanifotsy",
-    period: "2021",
-  },
-];
+const jobKeys = ["aglt", "drcc"] as const;
+const educationKeys = ["bachelor", "baccalaureate"] as const;
 
 export default function ExperienceSection() {
   const sectionRef = useRef<HTMLElement>(null);
+  const t = useTranslations("Experience");
+
+  const jobs = jobKeys.map((key) => ({
+    key,
+    role: t(`jobs.${key}.role`),
+    company: t(`jobs.${key}.company`),
+    period: t(`jobs.${key}.period`),
+    highlights: t.raw(`jobs.${key}.highlights`) as string[],
+  }));
+
+  const education = educationKeys.map((key) => ({
+    key,
+    degree: t(`education.${key}.degree`),
+    major: t(`education.${key}.major`),
+    school: t(`education.${key}.school`),
+    period: t(`education.${key}.period`),
+  }));
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Section label + heading
       gsap.from("[data-exp='heading']", {
         scrollTrigger: {
           trigger: "[data-exp='heading']",
@@ -62,7 +43,6 @@ export default function ExperienceSection() {
         ease: "power3.out",
       });
 
-      // Timeline items
       gsap.from("[data-exp='item']", {
         scrollTrigger: {
           trigger: "[data-exp='timeline']",
@@ -75,7 +55,6 @@ export default function ExperienceSection() {
         ease: "power3.out",
       });
 
-      // Highlight lines
       gsap.from("[data-exp='highlight']", {
         scrollTrigger: {
           trigger: "[data-exp='timeline']",
@@ -88,7 +67,6 @@ export default function ExperienceSection() {
         ease: "power3.out",
       });
 
-      // Education cards
       gsap.from("[data-exp='edu']", {
         scrollTrigger: {
           trigger: "[data-exp='education']",
@@ -101,7 +79,6 @@ export default function ExperienceSection() {
         ease: "power3.out",
       });
 
-      // Divider
       gsap.from("[data-exp='divider']", {
         scrollTrigger: {
           trigger: "[data-exp='divider']",
@@ -126,39 +103,39 @@ export default function ExperienceSection() {
       <div className="mx-auto max-w-6xl">
         {/* Header */}
         <div data-exp="heading">
-          <p className="text-sm tracking-widest text-secondary">EXPERIENCE</p>
+          <p className="text-sm tracking-widest text-secondary">{t("label")}</p>
           <h2 className="mt-4 text-4xl leading-tight font-light text-primary md:text-5xl">
-            Where I&apos;ve
+            {t("headingLine1")}
             <br />
-            been working
+            {t("headingLine2")}
           </h2>
         </div>
 
         {/* Timeline */}
         <div data-exp="timeline" className="mt-16 space-y-16">
-          {experience.map((exp) => (
+          {jobs.map((job) => (
             <div
-              key={exp.company}
+              key={job.key}
               data-exp="item"
               className="grid gap-8 md:grid-cols-[200px_1fr]"
             >
               {/* Left — period */}
               <div>
-                <p className="text-sm text-secondary">{exp.period}</p>
+                <p className="text-sm text-secondary">{job.period}</p>
               </div>
 
               {/* Right — details */}
               <div>
                 <div className="flex items-baseline gap-3">
                   <h3 className="text-xl font-medium text-primary">
-                    {exp.role}
+                    {job.role}
                   </h3>
                   <span className="text-sm text-secondary">
-                    — {exp.company}
+                    — {job.company}
                   </span>
                 </div>
                 <ul className="mt-5 space-y-2.5">
-                  {exp.highlights.map((h) => (
+                  {job.highlights.map((h) => (
                     <li
                       key={h}
                       data-exp="highlight"
@@ -180,11 +157,11 @@ export default function ExperienceSection() {
         {/* Education */}
         <div>
           <p className="mb-12 text-sm tracking-widest text-secondary">
-            EDUCATION
+            {t("educationLabel")}
           </p>
           <div data-exp="education" className="grid gap-10 md:grid-cols-2">
             {education.map((edu) => (
-              <div key={edu.school} data-exp="edu">
+              <div key={edu.key} data-exp="edu">
                 <div className="flex items-baseline justify-between">
                   <h3 className="text-lg font-medium text-primary">
                     {edu.degree}

@@ -1,13 +1,26 @@
-import Link from "next/link";
+"use client";
 
-const navLinks = [
-  { label: "About", href: "#about" },
-  { label: "Experience", href: "#experience" },
-  { label: "Portfolio", href: "#portfolio" },
-  { label: "Contact", href: "#contact" },
-];
+import Link from "next/link";
+import { useLocale, useTranslations } from "next-intl";
+import { useRouter } from "next/navigation";
+
+const navKeys = [
+  { key: "about", href: "#about" },
+  { key: "experience", href: "#experience" },
+  { key: "portfolio", href: "#portfolio" },
+  { key: "contact", href: "#contact" },
+] as const;
 
 export default function Navigation() {
+  const t = useTranslations("Navigation");
+  const locale = useLocale();
+  const router = useRouter();
+
+  function switchLocale(next: string) {
+    document.cookie = `locale=${next};path=/;max-age=31536000`;
+    router.refresh();
+  }
+
   return (
     <nav className="fixed top-0 left-0 z-50 flex w-full items-center justify-between px-8 py-5 lg:px-12">
       {/* Logo */}
@@ -33,27 +46,48 @@ export default function Navigation() {
 
         {/* Nav links */}
         <ul className="hidden items-center gap-8 md:flex">
-          {navLinks.map((link) => (
+          {navKeys.map((link) => (
             <li key={link.href}>
               <Link
                 href={link.href}
                 className="text-sm text-primary transition-colors hover:text-secondary"
               >
-                {link.label}
+                {t(link.key)}
               </Link>
             </li>
           ))}
         </ul>
       </div>
 
-      {/* CTA */}
-      <Link
-        href="#contact"
-        className="hidden items-center gap-1 text-sm text-primary underline underline-offset-4 md:flex"
-      >
-        Get In Touch
-        <span className="text-xs">&#8599;</span>
-      </Link>
+      <div className="flex items-center gap-6">
+        {/* Language switcher */}
+        <div className="flex items-center gap-1 text-sm">
+          <button
+            type="button"
+            onClick={() => switchLocale("fr")}
+            className={`transition-colors ${locale === "fr" ? "font-medium text-primary" : "text-secondary hover:text-primary"}`}
+          >
+            FR
+          </button>
+          <span className="text-secondary/30">/</span>
+          <button
+            type="button"
+            onClick={() => switchLocale("en")}
+            className={`transition-colors ${locale === "en" ? "font-medium text-primary" : "text-secondary hover:text-primary"}`}
+          >
+            EN
+          </button>
+        </div>
+
+        {/* CTA */}
+        <Link
+          href="#contact"
+          className="hidden items-center gap-1 text-sm text-primary underline underline-offset-4 md:flex"
+        >
+          {t("cta")}
+          <span className="text-xs">&#8599;</span>
+        </Link>
+      </div>
     </nav>
   );
 }

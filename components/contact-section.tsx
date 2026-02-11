@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
+import { useTranslations } from "next-intl";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -19,6 +20,7 @@ export default function ContactSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const [status, setStatus] = useState<FormStatus>("idle");
   const [errorMessage, setErrorMessage] = useState("");
+  const t = useTranslations("Contact");
   const {
     register,
     handleSubmit,
@@ -92,16 +94,14 @@ export default function ContactSection() {
 
       if (!res.ok) {
         const body = await res.json();
-        throw new Error(body.error || "Something went wrong.");
+        throw new Error(body.error || t("error"));
       }
 
       setStatus("success");
       reset();
     } catch (err) {
       setStatus("error");
-      setErrorMessage(
-        err instanceof Error ? err.message : "Something went wrong.",
-      );
+      setErrorMessage(err instanceof Error ? err.message : t("error"));
     }
   }
 
@@ -116,19 +116,20 @@ export default function ContactSection() {
           {/* Left — heading + description */}
           <div>
             <div data-contact="heading">
-              <p className="text-sm tracking-widest text-secondary">CONTACT</p>
+              <p className="text-sm tracking-widest text-secondary">
+                {t("label")}
+              </p>
               <h2 className="mt-4 text-4xl leading-tight font-light text-primary md:text-5xl">
-                Let&apos;s work
+                {t("headingLine1")}
                 <br />
-                together
+                {t("headingLine2")}
               </h2>
             </div>
             <p
               data-contact="description"
               className="mt-8 max-w-md text-base leading-relaxed text-secondary"
             >
-              Have a project in mind or want to collaborate? Send me a message
-              and I&apos;ll get back to you as soon as possible.
+              {t("description")}
             </p>
           </div>
 
@@ -138,17 +139,17 @@ export default function ContactSection() {
               <div className="flex h-full items-center">
                 <div>
                   <p className="text-xl font-light text-primary">
-                    Message sent!
+                    {t("successTitle")}
                   </p>
                   <p className="mt-2 text-sm text-secondary">
-                    Thank you for reaching out. I&apos;ll get back to you soon.
+                    {t("successMessage")}
                   </p>
                   <button
                     type="button"
                     onClick={() => setStatus("idle")}
                     className="mt-6 text-sm text-primary underline underline-offset-4 transition-colors hover:text-secondary"
                   >
-                    Send another message
+                    {t("sendAnother")}
                   </button>
                 </div>
               </div>
@@ -159,14 +160,14 @@ export default function ContactSection() {
                     htmlFor="name"
                     className="mb-2 block text-sm text-secondary"
                   >
-                    Name
+                    {t("nameLabel")}
                   </label>
                   <input
                     type="text"
                     id="name"
-                    {...register("name", { required: "Name is required." })}
+                    {...register("name", { required: t("nameRequired") })}
                     className="w-full border-b border-secondary/20 bg-transparent py-3 text-primary outline-none transition-colors placeholder:text-secondary/40 focus:border-primary"
-                    placeholder="Your name"
+                    placeholder={t("namePlaceholder")}
                   />
                   {errors.name && (
                     <p className="mt-1 text-sm text-red-600">
@@ -180,20 +181,20 @@ export default function ContactSection() {
                     htmlFor="email"
                     className="mb-2 block text-sm text-secondary"
                   >
-                    Email
+                    {t("emailLabel")}
                   </label>
                   <input
                     type="email"
                     id="email"
                     {...register("email", {
-                      required: "Email is required.",
+                      required: t("emailRequired"),
                       pattern: {
                         value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                        message: "Invalid email address.",
+                        message: t("emailInvalid"),
                       },
                     })}
                     className="w-full border-b border-secondary/20 bg-transparent py-3 text-primary outline-none transition-colors placeholder:text-secondary/40 focus:border-primary"
-                    placeholder="your@email.com"
+                    placeholder={t("emailPlaceholder")}
                   />
                   {errors.email && (
                     <p className="mt-1 text-sm text-red-600">
@@ -207,16 +208,16 @@ export default function ContactSection() {
                     htmlFor="message"
                     className="mb-2 block text-sm text-secondary"
                   >
-                    Message
+                    {t("messageLabel")}
                   </label>
                   <textarea
                     id="message"
                     {...register("message", {
-                      required: "Message is required.",
+                      required: t("messageRequired"),
                     })}
                     rows={5}
                     className="w-full resize-none border-b border-secondary/20 bg-transparent py-3 text-primary outline-none transition-colors placeholder:text-secondary/40 focus:border-primary"
-                    placeholder="Tell me about your project..."
+                    placeholder={t("messagePlaceholder")}
                   />
                   {errors.message && (
                     <p className="mt-1 text-sm text-red-600">
@@ -235,7 +236,7 @@ export default function ContactSection() {
                     disabled={status === "loading"}
                     className="inline-flex items-center gap-2 border border-primary bg-primary px-8 py-3 text-sm text-white transition-colors hover:bg-transparent hover:text-primary disabled:cursor-not-allowed disabled:opacity-50"
                   >
-                    {status === "loading" ? "Sending..." : "Send Message"}
+                    {status === "loading" ? t("sending") : t("send")}
                     {status !== "loading" && (
                       <span className="text-xs">&#8599;</span>
                     )}

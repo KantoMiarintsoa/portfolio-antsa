@@ -1,0 +1,123 @@
+{
+  "Metadata": {
+    "title": "Antsa Ratolojanahary — Video Editor & Photographer",
+    "description": "Portfolio of Antsa Ratolojanahary, video editor & photographer"
+  },
+  "Navigation": {
+    "about": "About",
+    "experience": "Experience",
+    "portfolio": "Portfolio",
+    "contact": "Contact",
+    "cta": "Get In Touch"
+  },
+  "Hero": {
+    "sidebar": "Video editor & photographer",
+    "videosEdited": "Videos edited",
+    "fasterDelivery": "% faster delivery",
+    "heading": "Hello",
+    "subtitle": "— It's Antsa, a video editor & photographer",
+    "scrollDown": "Scroll down ↓",
+    "profileAlt": "Antsa Ratolojanahary portrait"
+  },
+  "About": {
+    "label": "ABOUT ME",
+    "headingLine1": "Crafting stories",
+    "headingLine2": "through every frame",
+    "bio": "Creative video editor and photographer, I combine technical post-production skills with a sharp eye for visual composition. Passionate about storytelling — whether through motion or a single frame — I help creators and businesses transform their ideas into impactful content while optimizing their daily workflow.",
+    "skillsLabel": "SKILLS",
+    "skills": {
+      "postProduction": "Post-production Video",
+      "storytelling": "Visual Storytelling",
+      "premiere": "Adobe Premiere Pro",
+      "colorGrading": "Color Grading",
+      "soundDesign": "Sound Design",
+      "motionDesign": "Motion Design",
+      "photography": "Photography",
+      "retouching": "Photo Retouching"
+    }
+  },
+  "Experience": {
+    "label": "EXPERIENCE",
+    "headingLine1": "Where I've",
+    "headingLine2": "been working",
+    "educationLabel": "EDUCATION",
+    "jobs": {
+      "aglt": {
+        "role": "Video Editor",
+        "company": "AGLT",
+        "period": "Oct 2024 — Present",
+        "highlights": [
+          "Edited 55+ videos for YouTube channels totaling 813 subscribers",
+          "Reduced post-production time by 20% with custom templates",
+          "Real estate video editing for clients in Belgium & Canada",
+          "Short-form social media content with dynamic editing",
+          "Color grading to make interiors warmer and more appealing"
+        ]
+      },
+      "drcc": {
+        "role": "Intern Journalist & Video Editor",
+        "company": "DRCC Vakinankaratra, Antsirabe",
+        "period": "2022 — 2024",
+        "highlights": [
+          "Full video journal editing — assembly, titling, audio mixing",
+          "Field journalism, interviews & cultural event coverage"
+        ]
+      }
+    },
+    "education": {
+      "bachelor": {
+        "degree": "Bachelor in Communication",
+        "major": "Media & Journalism",
+        "school": "Adventist University Zurcher Sambaina",
+        "period": "2022 — 2024"
+      },
+      "baccalaureate": {
+        "degree": "Baccalaureate",
+        "major": "Series A2",
+        "school": "Lycee Catholique Sainte-Therese d'Antanifotsy",
+        "period": "2021"
+      }
+    }
+  },
+  "Gallery": {
+    "label": "PORTFOLIO",
+    "headingLine1": "Photography",
+    "headingLine2": "gallery",
+    "items": {
+      "image1": { "title": "Golden Hour", "subtitle": "Landscape" },
+      "image2": { "title": "Depth of Field", "subtitle": "Macro" },
+      "image3": { "title": "Contrast", "subtitle": "Black & White" },
+      "image4": { "title": "Reflections", "subtitle": "Architecture" },
+      "image5": { "title": "Raw Emotion", "subtitle": "Documentary" },
+      "image6": { "title": "Textures", "subtitle": "Detail" },
+      "image7": { "title": "Vanishing Point", "subtitle": "Perspective" },
+      "image8": { "title": "Still Life", "subtitle": "Objects" }
+    }
+  },
+  "Contact": {
+    "label": "CONTACT",
+    "headingLine1": "Let's work",
+    "headingLine2": "together",
+    "description": "Have a project in mind or want to collaborate? Send me a message and I'll get back to you as soon as possible.",
+    "nameLabel": "Name",
+    "namePlaceholder": "Your name",
+    "nameRequired": "Name is required.",
+    "emailLabel": "Email",
+    "emailPlaceholder": "your@email.com",
+    "emailRequired": "Email is required.",
+    "emailInvalid": "Invalid email address.",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Tell me about your project...",
+    "messageRequired": "Message is required.",
+    "send": "Send Message",
+    "sending": "Sending...",
+    "successTitle": "Message sent!",
+    "successMessage": "Thank you for reaching out. I'll get back to you soon.",
+    "sendAnother": "Send another message",
+    "error": "Something went wrong."
+  },
+  "Footer": {
+    "copyright": "© {year} Antsa Ratolojanahary",
+    "backToTop": "Back to top ↑"
+  }
+}
