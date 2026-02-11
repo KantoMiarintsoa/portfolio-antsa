@@ -173,14 +173,14 @@ export default function HeroSection() {
       {/* Profile image — right side */}
       <div
         data-animate="image"
-        className="absolute top-0 right-0 h-full w-[55%] overflow-hidden"
+        className="absolute right-12 bottom-0 h-[75%] w-[40%] overflow-hidden"
       >
         <Image
           src="/images/profile.png"
           alt="Antsa Ratolojanahary portrait"
           fill
           priority
-          className="object-cover object-top grayscale"
+          className="object-contain object-bottom"
         />
       </div>
     </section>
