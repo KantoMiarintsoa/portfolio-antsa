@@ -13,6 +13,8 @@ const skills = [
   "Color Grading",
   "Sound Design",
   "Motion Design",
+  "Photography",
+  "Photo Retouching",
 ];
 
 export default function AboutSection() {
@@ -81,17 +83,17 @@ export default function AboutSection() {
             >
               Crafting stories
               <br />
-              through every cut
+              through every frame
             </h2>
             <p
               data-about="bio"
               className="mt-8 max-w-md text-base leading-relaxed text-secondary"
             >
-              Creative video editor and rigorous virtual assistant, I combine
-              technical post-production skills with content management
-              expertise. Passionate about storytelling, I help creators and
-              businesses transform their ideas into impactful content while
-              optimizing their daily workflow.
+              Creative video editor and photographer, I combine technical
+              post-production skills with a sharp eye for visual composition.
+              Passionate about storytelling — whether through motion or a single
+              frame — I help creators and businesses transform their ideas into
+              impactful content while optimizing their daily workflow.
             </p>
           </div>
 

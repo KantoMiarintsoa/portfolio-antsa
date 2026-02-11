@@ -113,7 +113,7 @@ export default function HeroSection() {
       >
         <div className="flex flex-col items-center gap-6">
           <span className="origin-center -rotate-90 whitespace-nowrap text-xs tracking-widest text-secondary">
-            Video editor
+            Video editor & photographer
           </span>
         </div>
         <div className="mt-8 h-24 w-px bg-secondary/30" />
@@ -148,7 +148,7 @@ export default function HeroSection() {
             Hello
           </h1>
           <p data-animate="subtitle" className="mt-4 text-base text-secondary">
-            — It&apos;s Antsa, a video storyteller
+            — It&apos;s Antsa, a video editor &amp; photographer
           </p>
         </div>
 
