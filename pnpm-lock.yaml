@@ -13,12 +13,18 @@ importers:
       next:
         specifier: 16.1.6
         version: 16.1.6(@babel/core@7.29.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+      nodemailer:
+        specifier: ^8.0.1
+        version: 8.0.1
       react:
         specifier: 19.2.3
         version: 19.2.3
       react-dom:
         specifier: 19.2.3
         version: 19.2.3(react@19.2.3)
+      react-hook-form:
+        specifier: ^7.71.1
+        version: 7.71.1(react@19.2.3)
     devDependencies:
       "@tailwindcss/postcss":
         specifier: ^4
@@ -26,6 +32,9 @@ importers:
       "@types/node":
         specifier: ^20
         version: 20.19.30
+      "@types/nodemailer":
+        specifier: ^7.0.9
+        version: 7.0.9
       "@types/react":
         specifier: ^19
         version: 19.2.10
@@ -822,6 +831,12 @@ packages:
     resolution:
       {
         integrity: sha512-WJtwWJu7UdlvzEAUm484QNg5eAoq5QR08KDNx7g45Usrs2NtOPiX8ugDqmKdXkyL03rBqU5dYNYVQetEpBHq2g==,
+      }
+
+  "@types/nodemailer@7.0.9":
+    resolution:
+      {
+        integrity: sha512-vI8oF1M+8JvQhsId0Pc38BdUP2evenIIys7c7p+9OZXSPOH5c1dyINP1jT8xQ2xPuBUXmIC87s+91IZMDjH8Ow==,
       }
 
   "@types/react-dom@19.2.3":
@@ -2631,6 +2646,13 @@ packages:
         integrity: sha512-nmh3lCkYZ3grZvqcCH+fjmQ7X+H0OeZgP40OierEaAptX4XofMh5kwNbWh7lBduUzCcV/8kZ+NDLCwm2iorIlA==,
       }
 
+  nodemailer@8.0.1:
+    resolution:
+      {
+        integrity: sha512-5kcldIXmaEjZcHR6F28IKGSgpmZHaF1IXLWFTG+Xh3S+Cce4MiakLtWY+PlBU69fLbRa8HlaGIrC/QolUpHkhg==,
+      }
+    engines: { node: ">=6.0.0" }
+
   object-assign@4.1.1:
     resolution:
       {
@@ -2839,6 +2861,15 @@ packages:
       }
     peerDependencies:
       react: ^19.2.3
+
+  react-hook-form@7.71.1:
+    resolution:
+      {
+        integrity: sha512-9SUJKCGKo8HUSsCO+y0CtqkqI5nNuaDqTxyqPsZPqIwudpj4rCrAz/jZV+jn57bx5gtZKOh3neQu94DXMc+w5w==,
+      }
+    engines: { node: ">=18.0.0" }
+    peerDependencies:
+      react: ^16.8.0 || ^17 || ^18 || ^19
 
   react-is@16.13.1:
     resolution:
@@ -3833,6 +3864,10 @@ snapshots:
   "@types/node@20.19.30":
     dependencies:
       undici-types: 6.21.0
+
+  "@types/nodemailer@7.0.9":
+    dependencies:
+      "@types/node": 20.19.30
 
   "@types/react-dom@19.2.3(@types/react@19.2.10)":
     dependencies:
@@ -5048,6 +5083,8 @@ snapshots:
 
   node-releases@2.0.27: {}
 
+  nodemailer@8.0.1: {}
+
   object-assign@4.1.1: {}
 
   object-inspect@1.13.4: {}
@@ -5167,6 +5204,10 @@ snapshots:
     dependencies:
       react: 19.2.3
       scheduler: 0.27.0
+
+  react-hook-form@7.71.1(react@19.2.3):
+    dependencies:
+      react: 19.2.3
 
   react-is@16.13.1: {}
 
